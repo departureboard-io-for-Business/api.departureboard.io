@@ -1118,7 +1118,7 @@ The optional `stationCRS` parameter can also be used to lookup basic information
 
 Parameter | Required | Default     | Description
 --------- | -------  | ----------- | -----------
-station   | false     | none       | The string you wish to use to search for stations. This can be a CRS Code, such as `PAD`, a partial train station name such as `Wate` or a full train station name such as `London Waterloo`. If this query parameter is omitted, then all train stations in the UK will be returned. This parameter cannot be used alongside `stationCRS`. You must use one or the other.<br><br>**This query parameter must be URL encoded. For example `London Paddington` becomes `London%20Paddington`, and `Hayes & Harlington` becomes `Hayes%20%26%20Harlington`.**
+station   | false     | none       | The string you wish to use to search for stations. This can be a CRS Code, such as `PAD`, a partial train station name such as `Wate` or a full train station name such as `London Waterloo`. If this query parameter is blank, then all train stations in the UK will be returned. This parameter cannot be used alongside `stationCRS`. You must use one or the other.<br><br>**This query parameter must be URL encoded. For example `London Paddington` becomes `London%20Paddington`, and `Hayes & Harlington` becomes `Hayes%20%26%20Harlington`.**
 stationCRS| false     | none       | Used to lookup a specific train station by CRS Code. This parameter should not be used for searching, it must be a valid and complete CRS code. **This parameter will change the response to return a single JSON object instead of an array**. This parameter cannot be used alongside `station`. You must use one or the other.
 
 ### Example Queries
@@ -1129,7 +1129,7 @@ stationCRS| false     | none       | Used to lookup a specific train station by 
 
 * Return a list of all UK Train Stations:
 
-`curl -X GET "https://api.departureboard.io/api/v2.0/getStationBasicInfo/" -H "accept: */*"`
+`curl -X GET "https://api.departureboard.io/api/v2.0/getStationBasicInfo/?station=" -H "accept: */*"`
 
 * Lookup London Paddington:
 
